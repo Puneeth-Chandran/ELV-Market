@@ -13,4 +13,4 @@ export default (user, statusCode, res) =>{
     res.status(statusCode).cookie("token", token, options).json({
         token,
     });
-};
+}; 

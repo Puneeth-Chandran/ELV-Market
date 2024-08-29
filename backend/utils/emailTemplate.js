@@ -451,7 +451,7 @@ export const getResetPasswordTemplate = (username, resetUrl) =>`
                   href="https://shopit.com"
                   class="f-fallback email-masthead_name"
                 >
-                  Cables House
+                  ELV Market
                 </a>
               </td>
             </tr>
@@ -477,7 +477,7 @@ export const getResetPasswordTemplate = (username, resetUrl) =>`
                         <h1>Hi ${username},</h1>
                         <p>
                           You recently requested to reset your password for your
-                          Cables House account. Use the button below to reset it.
+                          ELV Market account. Use the button below to reset it.
                           <strong
                             >This password reset is only valid for the next 30
                             minutes.</strong
@@ -521,7 +521,7 @@ export const getResetPasswordTemplate = (username, resetUrl) =>`
                           <a href="{{support_url}}">contact support</a> if you
                           have questions.
                         </p>
-                        <p>Thanks, <br />Cables House team</p>
+                        <p>Thanks, <br />ELV Market team</p>
 
                         <table class="body-sub" role="presentation">
                           <tr>
@@ -556,7 +556,7 @@ export const getResetPasswordTemplate = (username, resetUrl) =>`
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="f-fallback sub align-center">
-                        Cables House
+                        ELV Market
                         <br />Naif street, <br />Dubai
                       </p>
                     </td>

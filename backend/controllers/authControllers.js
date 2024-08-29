@@ -4,7 +4,8 @@ import { getResetPasswordTemplate } from "../utils/emailTemplate.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import sendEmail from "../utils/sendEmail.js";
 import sendToken from "../utils/sendToken.js";
-import crypto from "crypto"
+import crypto from "crypto";
+
 
 //Register user =>/api/v1/register
 export const  registerUser = catchAsyncErrors(async (req,res,next)=>{
@@ -22,7 +23,7 @@ export const  registerUser = catchAsyncErrors(async (req,res,next)=>{
     
 });
 
-//Login user =>/api/v1/register
+//Login user =>/api/v1/login
 export const  loginUser = catchAsyncErrors(async (req,res,next)=>{
     const {email, password} =req.body;
 
@@ -76,7 +77,7 @@ const resetToken = user.getResetPasswordToken();
 await user.save();
 
 //Create reset password url
-const resetUrl = `${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken}`;
+const resetUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
     const message = getResetPasswordTemplate(user?.name, resetUrl)
 
@@ -84,7 +85,7 @@ const resetUrl = `${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken
 
         await sendEmail({
             email: user.email,
-            subject: 'Cables House password recovery',
+            subject: 'ELV Market password recovery',
             message,
         });
 
@@ -126,7 +127,7 @@ export const resetPassword = catchAsyncErrors(async (req,res,next)=>{
 
 
     //Set the new password
-    user.password = req.body.password
+    user.password = req.body.password;
 
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
